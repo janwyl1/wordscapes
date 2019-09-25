@@ -1,15 +1,5 @@
 (function() {
     "use strict";
-    /* Wordscapes Solver: 
-     To beat my friends at Wordscapes - a terrible mobile game.
-
-     Player receives a set of starting letters. Attempts to fill in the blanks using the letters provided.
-
-      User can enter allowed letters and (if applicable) their current positions to receive a list of possible solutions. e.g. 
-        Allowed letters: eat
-        e-t returns 'eat'
-        --- returns 'aet', 'ate', 'eat', 'eta', 'tae', 'tea'
-    */
     module.exports = {
         wordList: require('./words_dictionary.json'),
         matches: [],
