@@ -23,10 +23,10 @@ Solve the puzzle, one word at a time, by entering the missing word and the avail
 
 
 ### index.js 
-Contains a basic example
+Contains a basic example.
 
 ### app.js 
-Contains an Express application with a form and route handling
+Contains an Express application with a form and route handler.
 
 ### solver.js 
 Contains the logic for solving the puzzle. It takes a brute force approach, looping over each word in the dictionary to find potential matches.
