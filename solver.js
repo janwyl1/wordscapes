@@ -1,6 +1,5 @@
 (function() {
     "use strict";
-
     /* Wordscapes Solver: 
      To beat my friends at Wordscapes - a terrible mobile game.
 
@@ -11,18 +10,15 @@
         e-t returns 'eat'
         --- returns 'aet', 'ate', 'eat', 'eta', 'tae', 'tea'
     */
-
-    // const wordList = require('./words_dictionary.json');
-    // console.log("wordlist top: ", wordList);
     module.exports = {
         wordList: require('./words_dictionary.json'),
         matches: [],
-        allowedLetters: "eeslvs",
-        unsolved: "-----s",
+        unsolved: "d-f--lt",
+        allowedLetters: "default",
         // update allowed string
         setAllowed: function(newStr) {
             if (typeof newStr === "string") {
-                this.allowedLetters = newStr;
+                this.allowedLetters = this.replaceSpecialChars(newStr);
                 return true;
             }
             return false;
@@ -30,7 +26,7 @@
         // update unsolved string
         setUnsolved: function(newStr) {
             if (typeof newStr === "string") {
-                this.unsolved = newStr;
+                this.unsolved = this.replaceSpecialChars(newStr);
                 return true;
             }
             return false;
@@ -42,7 +38,7 @@
         },
         // find words
         findWords: function() {
-            console.log("wordlist: ", this.wordList);
+            this.matches = [];
             for (let i = 0; i < this.wordList.words.length; i++) {
                 let matchedWord = this.wordList.words[i];
                 let possible = this.checkWord(this.unsolved, matchedWord);
@@ -54,6 +50,7 @@
                     }
                 }
             }
+            return this.matches;
         },
         // check that word contains allowed letters
         checkLetters: function(map, allowedMapped) {
@@ -80,6 +77,11 @@
             }
             return true;
         },
+        // replace any special characters with -
+        replaceSpecialChars: function(str) {
+            const newStr = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'-');
+            return newStr;
+        },
         // create an object map from a string
         mapStr: function(str) {
             let map = {};
@@ -94,17 +96,4 @@
             return map;
         }
     };
-
-    // exports.allowed = Solver.setAllowed;
-    // exports.unsolved = Solver.setUnsolved;
-    // exports.findWords = Solver.findWords;
-    // console.log("random: ", solver.randomWord());
-    // solver.setAllowed("rwenni");
-    // solver.setUnsolved("i-n--");
-    // solver.findWords();
-    // solver.promptUser();
-    // console.log("Matches: ", solver.matches.length);
-    // console.log("Matches: ", solver.matches);
-    // module.exports.Solver = Solver;
 })();
-

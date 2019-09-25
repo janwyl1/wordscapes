@@ -1,0 +1,14 @@
+include header.pug
+form(action="/", method="POST")
+      label(for="inptUnsolved") 
+         strong Solve word:
+      br
+      input(type="text", name="inptUnsolved" placeholder="c.t")
+      br
+      label(for="inptAllowed") 
+         strong Using letters:
+      br
+      input(type="text" name="inptAllowed" placeholder="catery")   
+      br
+      button(type="submit")
+       | Find Words
