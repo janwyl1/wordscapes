@@ -8,18 +8,18 @@ Similar to a crossword puzzle, the player receives a set of 6 letters and attemp
 
 Solve the puzzle, one word at a time, by entering the missing word and the available letters. For example:
 
-solve word: c-t
-using letters: catery
+- solve word: c-t
+- using letters: catery
 
 **or:**
 
-solve word: c..t
-using letters: cynta
+- solve word: c..t
+- using letters: cynta
 
 **or:**
 
-solve word: -----
-using letters: htraes
+- solve word: -----
+- using letters: htraes
 
 
 ### index.js 
