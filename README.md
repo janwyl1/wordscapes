@@ -21,6 +21,7 @@ Solve the puzzle, one word at a time, by entering the missing word and the avail
 - solve word: -----
 - using letters: htraes
 
+It will search approx. 400k words to find potential solutions.
 
 ### index.js 
 Contains a basic example.
